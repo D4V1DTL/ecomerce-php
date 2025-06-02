@@ -2,9 +2,10 @@ version: "3.8"
 
 services:
     app:
-        image: php:8.2-apache
+        build: .
         container_name: laravel_app
         volumes:
             - .:/var/www/html
         ports:
             - "8000:80"
+        working_dir: /var/www/html
